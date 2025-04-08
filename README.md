@@ -4,7 +4,7 @@
 
 Welcome to **English Janala**, a modern and fully responsive website designed to help learners to expand their vocabulary with interactive lessons. The project aims to provide an engaging and seamless user experience, ensuring a visually appealing layout with easy accessibility on mobile, tablet and desktop devices.
 
-### [Click here](https://english-janala-sajjadur-rahman.netlify.app/) to visit the website.
+### [Click here](https://english-janala-by-sajjadur-rahman.netlify.app/) to visit the website.
 
 ## Technologies Used
 
