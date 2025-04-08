@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>English জানালা</title>
+  <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tiro+Bangla:ital@0;1&display=swap"
+    rel="stylesheet">
+  <style>
+    .non-active-btn {
+      background-color: white !important;
+      border: 1px solid #422ad5 !important;
+      color: #422ad5 !important;
+    }
+
+    .active-btn {
+      background-color: #422ad5 !important;
+      border: 1px solid #422ad5 !important;
+      color: #e0e7ff !important;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            "poppins": ["Poppins", "sans-serif"],
+            "inter": ["Inter", "sans-serif"],
+            "tiro": ["Tiro Bangla", "serif"],
+            "siliguri": ["Hind Siliguri", "sans-serif"]
+          },
+          colors: {
+            "custom-blue": "#00bcff",
+            "custom-purple": "#422ad5",
+            "custom-white": "#e0e7ff",
+            "custom-gray": "#f8f8f8",
+            "primary-black": "#18181b",
+            "secondary-black": "#292524"
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="font-poppins min-h-screen flex flex-col overflow-y-scroll">
+  <header id="navbar" class="border-b-2 bg-custom-gray sticky top-0 z-10 hidden">
+    <nav class="py-1 lg:py-3 pl-4 pr-2 sm:pl-6 sm:pr-4 lg:px-10 xl:px-14 2xl:px-20 container mx-auto">
+      <div class="navbar p-0 flex items-center justify-between">
+        <div onclick="window.location.href='./index.html'">
+          <a class="btn btn-ghost text-xl text-primary-black font-semibold p-0 gap-0"><span>English&nbsp;</span><img
+              src="./assets/logo.png" loading="lazy" alt="Logo" class="w-8"><span lang="bn"
+              class="font-tiro font-medium">&nbsp;জানালা</span></a>
+        </div>
+        <div class="flex justify-between items-center gap-4">
+          <a href="#learn"
+            class="btn btn-neutral bg-custom-gray hover:bg-custom-purple border-custom-purple hover:border-custom-purple text-custom-purple hover:text-custom-white text-base px-3 rounded-md h-10 min-h-9 font-semibold hidden lg:flex"><img
+              src="./assets/book.png" loading="lazy" alt="Book" class="w-4">Learn
+          </a>
+          <a href="#faq"
+            class="btn btn-neutral bg-custom-gray hover:bg-custom-purple border-custom-purple hover:border-custom-purple text-custom-purple hover:text-custom-white text-base px-3 rounded-md h-10 min-h-9 font-semibold hidden lg:flex"><img
+              src="./assets/question.png" loading="lazy" alt="Question" class="w-4">FAQ
+          </a>
+          <a onclick="logout()"
+            class="btn btn-neutral bg-custom-gray hover:bg-custom-purple border-custom-purple hover:border-custom-purple text-custom-purple hover:text-custom-white text-base px-3 rounded-md h-10 min-h-9 font-semibold hidden lg:flex"><img
+              src="./assets/logout.png" loading="lazy" alt="Logout" class="w-4">Logout
+          </a>
+        </div>
+        <div class="dropdown dropdown-end lg:hidden">
+          <button class="btn btn-square btn-ghost lg:hidden ml-1">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              class="inline-block h-10 w-10 stroke-current">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+              </path>
+            </svg>
+          </button>
+          <ul tabindex="0" class="menu menu-md dropdown-content bg-base-100 rounded-box z-[1] mt-2 w-40 p-4 shadow">
+            <li><a href="#learn" class="text-lg font-medium text-custom-purple"><img src="./assets/book.png"
+                  loading="lazy" alt="Book" class="w-4">&nbsp;Learn</a>
+            </li>
+            <li><a href="#faq" class="text-lg font-medium text-custom-purple"><img src="./assets/question.png"
+                  loading="lazy" alt="Question" class="w-4">&nbsp;FAQ</a>
+            </li>
+            <li><a onclick="logout()" class="text-lg font-medium text-custom-purple"><img src="./assets/logout.png"
+                  loading="lazy" alt="Logout" class="w-4">&nbsp;Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <header id="banner">
+    <div
+      class="flex flex-col lg:flex-row-reverse gap-4 lg:gap-0 items-center justify-between py-1 lg:py-3 px-4 sm:px-6 lg:px-10 xl:px-14 2xl:px-20 container mx-auto mb-6">
+      <div class="w-full lg:w-2/4 max-w-md md:max-w-lg lg:max-w-none">
+        <img src="./assets/student.png" loading="lazy" alt="Student">
+      </div>
+      <div class="card w-full max-w-md md:max-w-lg lg:max-w-md 2xl:max-w-xl shrink-0">
+        <div class="text-center lg:text-left">
+          <h1 class="text-4xl sm:text-5xl font-bold text-primary-black"><span class="text-custom-blue">English</span> is
+            Easy!!</h1>
+          <p class="pt-4 pb-6 font-siliguri text-primary-black opacity-80 font-medium" lang="bn">
+            আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের
+            Interactive Lessons আপনাকে নিয়ে যাবে অনন্য এক উচ্চতায়।
+          </p>
+        </div>
+        <form class="card-body p-0 w-full sm:w-5/6 lg:w-3/4 mx-auto lg:mx-0">
+          <div class="form-control">
+            <input id="username" type="text" placeholder="Enter username"
+              class="input input-bordered py-6 focus:outline-0" required />
+          </div>
+          <div class="form-control mt-2">
+            <input id="password" type="password" placeholder="Enter password"
+              class="input input-bordered py-6 focus:outline-0" required />
+          </div>
+          <div class="form-control mt-2">
+            <button id="get-started-btn"
+              class="btn bg-custom-purple hover:bg-[#3d26c7] w-36 text-custom-white hover:text-custom-white text-base font-semibold rounded-lg mx-auto lg:mx-0">Get
+              Started</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <main class="px-4 sm:px-6 lg:px-10 xl:px-14 2xl:px-20 container mx-auto">
+    <section id="learn" class="mt-10 mb-14 lg:mt-14 lg:mb-20 scroll-mt-36 flex-1 hidden">
+      <h2 class="text-primary-black font-bold text-3xl text-center"><span class="text-custom-blue">Let's</span> Learn
+        Vocabularies</h2>
+      <div id="btn-container"
+        class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-4 lg:gap-2 max-w-xl lg:max-w-5xl mx-auto my-8">
+      </div>
+      <div id="vocab-container" class="bg-custom-gray rounded-xl grid place-content-center min-h-80 p-5 mt-10">
+      </div>
+      <div id="loader" class="hidden justify-center items-center py-28 2xl:py-40">
+        <span class="loading loading-dots loading-lg"></span>
+      </div>
+      <dialog id="modal" class="modal text-primary-black">
+        <div id="modal-box" class="modal-box p-4 max-h-none">
+        </div>
+      </dialog>
+    </section>
+
+    <section id="faq" class="mb-12 lg:mb-16 scroll-mt-28 lg:scroll-mt-36 hidden">
+      <h2 class="text-primary-black font-bold text-3xl text-center"><span class="text-custom-blue">Frequently</span>
+        Asked
+        Questions</h2>
+      <div class="flex flex-col gap-4 lg:gap-3 xl:gap-5 mt-8">
+        <div class="collapse collapse-plus bg-custom-gray rounded-xl lg:p-2 xl:p-4">
+          <input type="radio" name="my-accordion-3" />
+          <div class="collapse-title text-lg lg:text-xl font-medium text-primary-black">01. What is the difference
+            between
+            <code>var</code>, <code>let</code> and <code>const</code> in Javascript?
+          </div>
+          <div class="collapse-content">
+            <p class="text-[#62748e] text-base font-normal">In JavaScript, <code>var</code>, <code>let</code> and
+              <code>const</code> differ in scope, hoisting and mutability. <code>var</code> is function-scoped, can be
+              re-declared, updated and is hoisted with an initial value of <code>undefined</code>, which can cause
+              unexpected behavior. <code>let</code>
+              is block-scoped, cannot be re-declared but can be updated and is hoisted without initialization, causing
+              a <code>ReferenceError</code> if accessed before declaration. <code>const</code> is also block-scoped,
+              cannot be re-declared or
+              updated and must be initialized at declaration, though objects and arrays declared with <code>const</code>
+              can have
+              their properties modified.
+            </p>
+          </div>
+        </div>
+        <div class="collapse collapse-plus bg-custom-gray rounded-xl lg:p-2 xl:p-4">
+          <input type="radio" name="my-accordion-3" />
+          <div class="collapse-title text-lg lg:text-xl font-medium text-primary-black">02. What is the difference
+            between
+            <code>map()</code>, <code>forEach()</code> and <code>filter()</code> in Javascript?
+          </div>
+          <div class="collapse-content">
+            <p class="text-[#62748e] text-base font-normal">In JavaScript, <code>map()</code>, <code>forEach()</code>
+              and <code>filter()</code> are array methods with different purposes. <code>map()</code> iterates over an
+              array, transforms each element and returns a new array with modified values, making it useful for data
+              transformation. <code>forEach()</code> also iterates over an array but does not return a new array, making
+              it ideal for performing actions like logging or updating the UI. <code>filter()</code> is used to create a
+              new array containing only elements that satisfy a given condition, making it useful for extracting subsets
+              of data. As like <code>map()</code>, <code>forEach()</code> and <code>filter()</code> do not modify the
+              original array.
+            </p>
+          </div>
+        </div>
+        <div class="collapse collapse-plus bg-custom-gray rounded-xl lg:p-2 xl:p-4">
+          <input type="radio" name="my-accordion-3" />
+          <div class="collapse-title text-lg lg:text-xl font-medium text-primary-black">03. How do arrow functions
+            differ from
+            regular functions?
+          </div>
+          <div class="collapse-content">
+            <p class="text-[#62748e] text-base font-normal">Arrow functions in JavaScript <code>(=&gt;)</code> provide a
+              shorter syntax compared to regular functions and do not bind their own <code>this</code>, instead
+              inheriting it from
+              the surrounding scope. This makes them useful for callbacks and simple functions but problematic for
+              object methods and event handlers where <code>this</code> needs to reference the calling object. Unlike
+              regular
+              functions, arrow functions also do not have an <code>arguments</code> object, requiring the use of rest
+              parameters
+              (<code>...args</code>) instead. Regular functions are dynamically bound to the calling object, making them
+              better
+              suited for methods inside objects. While arrow functions are great for concise and functional programming,
+              regular functions should be used when explicit <code>this</code> binding or <code>arguments</code> is
+              needed.
+            </p>
+          </div>
+        </div>
+        <div class="collapse collapse-plus bg-custom-gray rounded-xl lg:p-2 xl:p-4">
+          <input type="radio" name="my-accordion-3" />
+          <div class="collapse-title text-lg lg:text-xl font-medium text-primary-black">04. How do promises work in
+            JavaScript?
+          </div>
+          <div class="collapse-content">
+            <p class="text-[#62748e] text-base font-normal">In JavaScript, promises are used to handle asynchronous
+              operations by representing a value that might be available now, later or never. A promise has three
+              states: pending (initial state), fulfilled (operation successful, executing <code>.then()</code>) and
+              rejected (operation failed, executing <code>.catch()</code>). Promises allow chaining with
+              <code>.then()</code> for
+              sequential
+              execution and <code>.catch()</code> for error handling, making code more readable and manageable. For
+              example, <code>fetch()</code>
+              returns a promise, allowing us to process API responses asynchronously. Instead of using callbacks,
+              promises provide a cleaner way to write asynchronous code and they work seamlessly with
+              <code>async/await</code> for
+              even more readability.
+            </p>
+          </div>
+        </div>
+        <div class="collapse collapse-plus bg-custom-gray rounded-xl lg:p-2 xl:p-4">
+          <input type="radio" name="my-accordion-3" />
+          <div class="collapse-title text-lg lg:text-xl font-medium text-primary-black">05. How do closures work in
+            JavaScript?
+          </div>
+          <div class="collapse-content">
+            <p class="text-[#62748e] text-base font-normal">In JavaScript, closures occur when a function remembers and
+              can access variables from its outer scope, even after the outer function has executed. This happens
+              because inner functions retain a reference to the variables of their parent function, allowing data to
+              persist. For example, in a function factory or a counter, closures help maintain private state without
+              using global variables. They are widely used for data encapsulation, event handling and maintaining state
+              in asynchronous operations. By leveraging closures, JavaScript enables more modular, memory-efficient and
+              reusable code, making them a powerful feature in functional programming.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t-2">
+    <div
+      class="flex flex-col md:flex-row gap-8 md:justify-between md:items-center pt-14 pb-16 px-4 sm:px-6 lg:px-10 xl:px-14 2xl:px-20 container mx-auto">
+      <div onclick="window.location.href='./index.html'">
+        <a class="btn btn-ghost text-xl text-primary-black font-semibold p-0 gap-0"><span>English&nbsp;</span><img
+            src="./assets/logo.png" loading="lazy" alt="Logo" class="w-8"><span lang="bn"
+            class="font-tiro font-medium">&nbsp;জানালা</span></a>
+        <p lang="bn" class="text-primary-black font-siliguri font-medium text-lg mt-2">ইংরেজি শিখুন সহজে</p>
+        <p class="text-primary-black font-siliguri text-base font-medium">We provide Ed-Tech solutions since 2020.
+        </p>
+      </div>
+      <div>
+        <p class="text-sm font-medium text-primary-black opacity-60 mb-3">FOLLOW US</p>
+        <div class="flex gap-6 md:justify-center items-center">
+          <a href="https://www.facebook.com/" target="_blank" class="hover:opacity-80"><img src="./assets/facebook.png"
+              loading="lazy" alt="Facebook" class="w-7"></a>
+          <a href="https://www.instagram.com/" target="_blank" class="hover:opacity-80"><img
+              src="./assets/instagram.png" loading="lazy" alt="Instagram" class="w-7"></a>
+          <a href="https://www.youtube.com/" target="_blank" class="hover:opacity-80"><img src="./assets/youtube.png"
+              loading="lazy" alt="Youtube" class="w-8"></a>
+          <a id="github" href="https://www.youtube.com/" target="_blank" class="hover:opacity-80 hidden"><img
+              src="./assets/github.png" loading="lazy" alt="GitHub" class="w-8"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./main.js"></script>
+</body>
+
+</html>
